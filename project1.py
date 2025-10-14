@@ -42,7 +42,7 @@ def calc_region_profit(superstore_data):
     profit_list[2]['Profit Margin'] = profit_list[2]['Total Profit']/profit_list[2]['Total Sales']*100
     profit_list[3]['Profit Margin'] = profit_list[3]['Total Profit']/profit_list[3]['Total Sales']*100
     fieldnames = ['Region','Total Sales','Total Profit','Profit Margin']
-    result_file = 'data/result1.csv'
+    result_file = 'result/result1.csv'
     list_to_csv(profit_list, result_file, fieldnames)
 
 def list_to_csv(dict_list, result_file, fieldnames):
@@ -55,4 +55,5 @@ if __name__ == "__main__":
     file_path = 'data/SampleSuperstore 2.csv'
     superstore_dict = csv_to_dict_list(file_path)
     superstore_data = clean_data(superstore_dict)
+    calc_region_profit(superstore_data)
     print(superstore_data)
