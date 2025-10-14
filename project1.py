@@ -45,6 +45,11 @@ def calc_region_profit(superstore_data):
     result_file = 'data/result1.csv'
     list_to_csv(profit_list, result_file, fieldnames)
 
+def list_to_csv(dict_list, result_file, fieldnames):
+    with open(result_file, 'w', newline='') as file:
+        writer = csv.DictWriter(file, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(dict_list)
 
 if __name__ == "__main__":
     file_path = 'data/SampleSuperstore 2.csv'
